@@ -1,0 +1,13 @@
+[package]
+name = "generate-completions"
+version = "0.1.0"
+authors = ["Yuma Hiramatsu <yuma.hiramatsu@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+combine = "4.5.2"
+itertools = "0.10"
+nom = "6.1"
+regex = "1.4"
