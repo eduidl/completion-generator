@@ -1,3 +1,5 @@
+#![warn(rust_2018_idioms, clippy::all, clippy::nursery)]
+
 use std::process::Command;
 
 use regex::Regex;
@@ -10,7 +12,7 @@ use parser::parse_line;
 
 const MAIN: &str = "catkin";
 
-const VERBS: [&'static str; 9] = [
+const VERBS: [&str; 9] = [
     "build", "clean", "config", "create", "env", "init", "list", "locate", "profile",
 ];
 
@@ -59,7 +61,7 @@ pub fn generate_each_option(
 
 fn generate_each_subcommand(verb: Option<&str>) {
     let args = if let Some(verb) = verb {
-        println!("");
+        println!();
         println!("# {}", &verb);
         println!("complete -c {} -n __fish_use_subcommand -a {}", MAIN, &verb);
         vec![verb, "--help"]
@@ -76,9 +78,7 @@ fn generate_each_subcommand(verb: Option<&str>) {
     let string = re.replace_all(string, " ");
 
     for line in string.lines() {
-        let result = parse_line(line);
-        if result.is_ok() {
-            let result = result.unwrap();
+        if let Ok(result) = parse_line(line) {
             generate_each_option(MAIN, verb, result.1, result.0);
         }
     }
