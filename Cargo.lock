@@ -34,25 +34,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "bytes"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b700ce4376041dcd0a327fd0097c41095743c4c8af8887265942faf1100bd040"
-
-[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
-name = "combine"
-version = "4.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc4369b5e4c0cddf64ad8981c0111e7df4f7078f4d6ba98fb31f2e17c4c57b7e"
+name = "completion-generator"
+version = "0.1.0"
 dependencies = [
- "bytes",
- "memchr",
+ "itertools",
+ "nom",
+ "regex",
 ]
 
 [[package]]
@@ -66,16 +59,6 @@ name = "funty"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fed34cd105917e91daa4da6b3728c47b068749d6a62c59811f06ed2ac71d9da7"
-
-[[package]]
-name = "generate-completions"
-version = "0.1.0"
-dependencies = [
- "combine",
- "itertools",
- "nom",
- "regex",
-]
 
 [[package]]
 name = "itertools"
